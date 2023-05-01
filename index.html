@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig Dice Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-body">
+      <header>
+        <h1>🎲🐷🐍 Pig Dice Game 🐍🐷🎲</h1>
+      </header>
+      <main>
+        <div class="textarea">
+          <p class="rules">
+            There are two players. The player whose turn it is rolls the
+            dice.<br /><br />
+            The total of the roll is added to the current player's score, unless
+            either die comes up as a “one”. If this happens, this player's turn
+            is over, and it is the other player’s turn.<br /><br />
+            After each roll, the current player can either roll again, (assuming
+            a “one” was not rolled) or if the current player feels that luck is
+            running thin, they can pass to the other player.<br /><br />
+            The first player to get 30 points or higher wins. <br /><br />
+            Oh, and if you roll two “ones” (snake eyes), your current score gets
+            zeroed out. So don’t do that.
+          </p>
+          <button>Hide Rules</button>
+        </div>
+        <div id="game-control">
+          <button id="new-game">New Game</button>
+          <button id="quit-game" disabled="true">Quit Game</button>
+          <button id="play-again" disabled="true">Play Again</button>
+
+          <p class="player"></p>
+        </div>
+        <div id="game" class="hidden">
+          <div id="dice-1">Dice 1</div>
+          <div id="dice-2">Dice 2</div>
+        </div>
+        <div id="actions">
+          <p id="message-board1"></p>
+          <p class="message-board"></p>
+          <button id="roll-dice" disabled="true">Roll dice</button>
+          <button id="pass" disabled="true">Pass</button>
+        </div>
+        <div id="score">
+          <div id="score-player-1">Score Player 1:</div>
+          <span id="result-player-1">0</span>
+          <div id="score-player-2">Score Player 2:</div>
+          <span id="result-player-2">0</span>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

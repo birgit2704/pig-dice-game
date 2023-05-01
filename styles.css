@@ -1,0 +1,68 @@
+body {
+  background-color: lightgrey;
+}
+#game-body {
+  margin: 0 auto;
+  width: 700px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+header {
+  margin: 0;
+  background-color: greenyellow;
+  padding: 15px 0;
+}
+h1 {
+  margin: 0;
+}
+
+.textarea {
+  background-color: whitesmoke;
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+button {
+  font-size: 18px;
+}
+
+#game-control {
+  background-color: blue;
+  color: white;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  background-color: rgba(173, 255, 47, 0.5);
+  height: 180px;
+  padding: 20px 0;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 40px;
+}
+
+#actions {
+  background-color: greenyellow;
+  padding: 10px 0;
+}
+
+#message-board1 {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#score {
+  background-color: blue;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
