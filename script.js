@@ -86,26 +86,14 @@
 
         if (resultPlayer1 >= 30) {
           winner = player1;
-          document.getElementById("pass").disabled = true;
-          document.getElementById("roll-dice").disabled = true;
-          document.getElementById(
-            "message-board1"
-          ).innerHTML = `😀 Congratulations ${playerWhoseTurn}!!!!! You won the game!!!!!!!!                               
-                    Press 'Play again' to play again`;
-          document.getElementById("play-again").removeAttribute("disabled");
+          cleanupAndWinningMessage();
         }
       } else {
         resultPlayer2 = resultPlayer2 + resultDice1 + resultDice2;
         document.getElementById("result-player-2").innerHTML = resultPlayer2;
         if (resultPlayer2 >= 30) {
           winner = player2;
-          document.getElementById("pass").disabled = true;
-          document.getElementById("roll-dice").disabled = true;
-          document.getElementById(
-            "message-board1"
-          ).innerHTML = `Congratulations ${playerWhoseTurn}!!!!! You won the game!!!!!!!!                               
-                    Press 'Play again' to play again`;
-          document.getElementById("play-again").disabled = false;
+          cleanupAndWinningMessage();
         }
       }
     }
@@ -126,7 +114,6 @@
     document.getElementById("play-again").disabled = true;
     document.getElementById("pass").disabled = true;
     document.getElementById("quit-game").disabled = true;
-
     document.getElementById("roll-dice").disabled = true;
     document.getElementById("player").innerHTML = "Thank you for playing!";
     document.getElementById("message-board").innerHTML = "";
@@ -153,27 +140,21 @@
     messageBoard.innerHTML = playerWhoseTurn;
   });
 
-  //reset
-  function reset() {
-    document.getElementById("score-player-1").innerHTML = `Score Player 1`;
-    document.getElementById("score-player-2").innerHTML = `Score Player 2`;
-    player1 = "Player 1";
-    player2 = "Player 2";
-    namePlayerWhoseTurn.innerHTML = "Player 1";
-    messageBoard.innerHTML = `Player 1`;
-    messageBoard.style.fontWeight = "normal";
-    playerWhoseTurn = player1;
-    document.getElementById("result-player-1").innerHTML = "0";
-    document.getElementById("result-player-2").innerHTML = "0";
-    resultPlayer1 = 0;
-    resultPlayer2 = 0;
-    document.querySelector("#game").className = "hidden";
-  }
-
   //set names
   function setNames() {
     namePlayerWhoseTurn.innerHTML = playerWhoseTurn;
     messageBoard.innerHTML = `${playerWhoseTurn} it's your turn`;
     messageBoard.style.fontWeight = "bold";
+  }
+
+  //cleanup and winning message
+  function cleanupAndWinningMessage() {
+    document.getElementById("pass").disabled = true;
+    document.getElementById("roll-dice").disabled = true;
+    document.getElementById(
+      "message-board1"
+    ).innerHTML = `😀 Congratulations ${playerWhoseTurn}!!!!! You won the game!!!!!!!!                               
+                    Press 'Play again' to play again`;
+    document.getElementById("play-again").disabled = false;
   }
 })();
