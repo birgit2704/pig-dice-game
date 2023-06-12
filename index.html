@@ -31,10 +31,10 @@
         </div>
         <div id="game-control">
           <button id="new-game">New Game</button>
-          <button id="quit-game" disabled="true">Quit Game</button>
-          <button id="play-again" disabled="true">Play Again</button>
+          <button id="play-again" disabled>Play Again</button>
+          <button id="quit-game" disabled>Quit Game</button>
 
-          <p class="player"></p>
+          <p class="player" id="player"></p>
         </div>
         <div id="game" class="hidden">
           <img id="dice-1" src="1die.jpg" />
@@ -42,7 +42,7 @@
         </div>
         <div id="actions">
           <p id="message-board1"></p>
-          <p class="message-board"></p>
+          <p class="message-board" id="message-board"></p>
           <button id="roll-dice" disabled="true">Roll dice</button>
           <button id="pass" disabled="true">Pass</button>
         </div>

@@ -22,6 +22,7 @@
 
   //set game button
   document.getElementById("new-game").addEventListener("click", function () {
+    document.getElementById("quit-game").removeAttribute("disabled");
     document.getElementById("message-board1").innerHTML = "";
     document.getElementById("pass").removeAttribute("disabled");
     document.getElementById("roll-dice").removeAttribute("disabled");
@@ -122,7 +123,16 @@
   });
 
   //quit game button
-  document.getElementById("quit-game").addEventListener("click", reset);
+  document.getElementById("quit-game").addEventListener("click", function () {
+    document.getElementById("play-again").setAttribute("disabled", "true");
+    document.getElementById("pass").setAttribute("disabled", "true");
+
+    document.getElementById("roll-dice").setAttribute("disabled", "true");
+    document.getElementById("player").innerHTML = "Thank you for playing!";
+    document.getElementById("message-board").innerHTML = "";
+    document.getElementById("message-board1").innerHTML = "";
+    document.getElementById("game").setAttribute("class", "hidden");
+  });
 
   //play again
   document.getElementById("play-again").addEventListener("click", function () {
