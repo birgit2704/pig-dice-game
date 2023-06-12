@@ -48,8 +48,12 @@
     let resultDice1 = Math.floor(Math.random() * 6) + 1;
     let resultDice2 = Math.floor(Math.random() * 6) + 1;
     document.getElementById("game").setAttribute("class", "visible");
-    document.getElementById("dice-1").innerHTML = resultDice1;
-    document.getElementById("dice-2").innerHTML = resultDice2;
+    document
+      .getElementById("dice-1")
+      .setAttribute("src", `${resultDice1}die.jpg`);
+    document
+      .getElementById("dice-2")
+      .setAttribute("src", `${resultDice2}die.jpg`);
 
     if (resultDice1 === 1 && resultDice2 === 1) {
       if (playerWhoseTurn === player1) {
