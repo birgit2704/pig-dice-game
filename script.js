@@ -6,7 +6,6 @@
   let namePlayerWhoseTurn;
   let resultPlayer1 = 0;
   let resultPlayer2 = 0;
-  let question;
   let winner;
 
   //toggle rules
@@ -22,10 +21,10 @@
 
   //set game button
   document.getElementById("new-game").addEventListener("click", function () {
-    document.getElementById("quit-game").removeAttribute("disabled");
+    document.getElementById("quit-game").disabled = false;
     document.getElementById("message-board1").innerHTML = "";
-    document.getElementById("pass").removeAttribute("disabled");
-    document.getElementById("roll-dice").removeAttribute("disabled");
+    document.getElementById("pass").disabled = false;
+    document.getElementById("roll-dice").disabled = false;
     document.querySelector("#game").className = "hidden";
     document.getElementById("result-player-1").innerHTML = "0";
     document.getElementById("result-player-2").innerHTML = "0";
@@ -87,8 +86,8 @@
 
         if (resultPlayer1 >= 30) {
           winner = player1;
-          document.getElementById("pass").setAttribute("disabled", "true");
-          document.getElementById("roll-dice").setAttribute("disabled", "true");
+          document.getElementById("pass").disabled = true;
+          document.getElementById("roll-dice").disabled = true;
           document.getElementById(
             "message-board1"
           ).innerHTML = `😀 Congratulations ${playerWhoseTurn}!!!!! You won the game!!!!!!!!                               
@@ -100,13 +99,13 @@
         document.getElementById("result-player-2").innerHTML = resultPlayer2;
         if (resultPlayer2 >= 30) {
           winner = player2;
-          document.getElementById("pass").setAttribute("disabled", "true");
-          document.getElementById("roll-dice").setAttribute("disabled", "true");
+          document.getElementById("pass").disabled = true;
+          document.getElementById("roll-dice").disabled = true;
           document.getElementById(
             "message-board1"
           ).innerHTML = `Congratulations ${playerWhoseTurn}!!!!! You won the game!!!!!!!!                               
                     Press 'Play again' to play again`;
-          document.getElementById("play-again").removeAttribute("disabled");
+          document.getElementById("play-again").disabled = false;
         }
       }
     }
@@ -124,10 +123,11 @@
 
   //quit game button
   document.getElementById("quit-game").addEventListener("click", function () {
-    document.getElementById("play-again").setAttribute("disabled", "true");
-    document.getElementById("pass").setAttribute("disabled", "true");
+    document.getElementById("play-again").disabled = true;
+    document.getElementById("pass").disabled = true;
+    document.getElementById("quit-game").disabled = true;
 
-    document.getElementById("roll-dice").setAttribute("disabled", "true");
+    document.getElementById("roll-dice").disabled = true;
     document.getElementById("player").innerHTML = "Thank you for playing!";
     document.getElementById("message-board").innerHTML = "";
     document.getElementById("message-board1").innerHTML = "";
@@ -140,8 +140,8 @@
     document.getElementById("message-board1").innerHTML = "";
     document.getElementById("result-player-1").innerHTML = "0";
     document.getElementById("result-player-2").innerHTML = "0";
-    document.getElementById("pass").removeAttribute("disabled");
-    document.getElementById("roll-dice").removeAttribute("disabled");
+    document.getElementById("pass").disabled = false;
+    document.getElementById("roll-dice").disabled = false;
     resultPlayer1 = 0;
     resultPlayer2 = 0;
     if (winner === player1) {
