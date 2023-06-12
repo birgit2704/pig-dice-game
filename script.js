@@ -10,12 +10,12 @@
 
   //toggle rules
   document.getElementById("hide-rules").addEventListener("click", function () {
-    if (document.getElementById("rules").style.display === "block") {
-      document.getElementById("rules").style.display = "none";
-      document.getElementById("hide-rules").innerHTML = "Show Rules";
-    } else {
+    if (document.getElementById("rules").style.display === "none") {
       document.getElementById("rules").style.display = "block";
       document.getElementById("hide-rules").innerHTML = "Hide Rules";
+    } else {
+      document.getElementById("rules").style.display = "none";
+      document.getElementById("hide-rules").innerHTML = "Show Rules";
     }
   });
 
