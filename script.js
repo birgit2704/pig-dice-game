@@ -9,6 +9,17 @@
   let question;
   let winner;
 
+  //toggle rules
+  document.getElementById("hide-rules").addEventListener("click", function () {
+    if (document.getElementById("rules").style.display === "block") {
+      document.getElementById("rules").style.display = "none";
+      document.getElementById("hide-rules").innerHTML = "Show Rules";
+    } else {
+      document.getElementById("rules").style.display = "block";
+      document.getElementById("hide-rules").innerHTML = "Hide Rules";
+    }
+  });
+
   //set game button
   document.getElementById("new-game").addEventListener("click", function () {
     document.getElementById("message-board1").innerHTML = "";
